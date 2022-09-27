@@ -29,7 +29,7 @@ function reales(plata) {
 
     alert("valor del real en pesos es " + rea)
 
-    cantidad = Number (prompt("Ingrese la cantidad a comprar"))
+    cantidad = Number (prompt("Ingrese la cantidad a comprar:"))
     validarOperacion(plata,cantidad,rea)
 }
 
@@ -37,7 +37,7 @@ function euros(plata) {
 
     alert("valor del euro en pesos es " + eur)
 
-    cantidad = Number (prompt("Ingrese la cantidad a comprar"))
+    cantidad = Number (prompt("Ingrese la cantidad a comprar:"))
     validarOperacion(plata,cantidad,eur)
 }
 
@@ -45,14 +45,14 @@ function dolares(plata) {
 
     alert("valor del dolar en pesos es " + usd)
 
-    cantidad = Number (prompt("Ingrese la cantidad a comprar"))
+    cantidad = Number (prompt("Ingrese la cantidad a comprar:"))
     validarOperacion(plata,cantidad,usd)
     
 }
 
-function seleccionarTipoMoneda(apellido) {
+function seleccionarTipoMoneda(nombre) {
 
-    plata = Number(prompt("Ingrese su saldo"))
+    plata = Number(prompt("Ingrese su saldo a utilizar"))
 
     console.log("1: dolares")
     console.log("2: euros")
@@ -66,21 +66,21 @@ function seleccionarTipoMoneda(apellido) {
             case "1":
                 dolares(plata)
 
-                opcion = prompt("Ingresar opcion")
+                opcion = prompt("Ingresar opcion: 1:Dolares , 2:Euros , 3:Reales, 4:Salir")
                 
                 break;
 
             case "2":
                  euros(plata)
 
-                 opcion = prompt("Ingresar opcion")
+                 opcion = prompt("Ingresar opcion: 1:Dolares , 2:Euros , 3:Reales, 4:Salir")
 
                 break;
 
             case "3":
                 reales(plata)
 
-                opcion = prompt("Ingresar opcion")
+                opcion = prompt("Ingresar opcion: 1:Dolares , 2:Euros , 3:Reales, 4:Salir")
 
                 break;
 
@@ -98,10 +98,10 @@ function seleccionarTipoMoneda(apellido) {
     }
 }
 
-function ingreseContraseña(dni) {
+function ingreseNombre(dni) {
     if(dni){
-        let contraseña = prompt("Ingresar contraseña")
-        seleccionarTipoMoneda(contraseña)
+        let nombre = prompt("Ingresar nombre")
+        seleccionarTipoMoneda(nombre)
     }
 }
 
