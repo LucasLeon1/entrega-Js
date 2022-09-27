@@ -3,8 +3,8 @@ let eur = 280
 let rea = 57
 
 
-function salir() {
-    alert ("Gracias por su compra")
+function salir(salir) {
+    alert ("Fin del proceso")
     
 }
 
@@ -50,7 +50,7 @@ function dolares(plata) {
     
 }
 
-function seleccionarTipoMoneda(nombre) {
+function seleccionarTipoMoneda(moneda) {
 
     plata = Number(prompt("Ingrese su saldo a utilizar"))
 
@@ -85,31 +85,52 @@ function seleccionarTipoMoneda(nombre) {
                 break;
 
             case "4":
-                salir()
+                salir(salir)
 
                 break;
 
             default:
                 console.log("Operacion invalida")
-
         }
-       
-
+    
+    }
+}
+function validarClave(clave) {
+    if(clave=== "1111"){
+        seleccionarTipoMoneda()
+    }else{
+        alert("Clave incorrecta")
+        
+    }
+}
+function ingreseClave(nombre) {
+    if(nombre){
+        let clave = prompt("Ingresar clave")
+        validarClave(clave)
     }
 }
 
 function ingreseNombre(dni) {
     if(dni){
         let nombre = prompt("Ingresar nombre")
-        seleccionarTipoMoneda(nombre)
+        ingreseClave(nombre)
     }
 }
 
-function ingreseDni() {
-
+function ingreseDni(inicio) {
+    if(inicio){
         let dni = prompt("Ingresar DNI")
         ingreseNombre(dni)
- 
+  }
+}
+function Inicio() {
+
+    let inicio = confirm("Ustedes esta ingresando a Compra de divisas")
+    ingreseDni(inicio)
+
 }
 
-ingreseDni()
+
+Inicio()
+
+
