@@ -108,7 +108,7 @@ function ingreseNombre(dni) {
 function ingreseDni() {
 
         let dni = prompt("Ingresar DNI")
-        ingreseContraseña(dni)
+        ingreseNombre(dni)
  
 }
 
