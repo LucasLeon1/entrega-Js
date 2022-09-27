@@ -1,22 +1,24 @@
-
 let usd = 285
 let eur = 280 
 let rea = 57
 
 
 function salir() {
-    alert ("")
+    alert ("Gracias por su compra")
     
 }
 
 function validarOperacion(plata,cantidad,valorUnitario) {
+
     if(plata>=cantidad*valorUnitario){
+
         plata-=cantidad*valorUnitario
         alert("tu saldo restante es " + plata )
-       
+        return plata
+    
     }
     else{
-        alert("monto superado")
+        alert("Monto superado")
 
     }
     return plata
@@ -24,92 +26,90 @@ function validarOperacion(plata,cantidad,valorUnitario) {
 }
 
 function reales(plata) {
+
     alert("valor del real en pesos es " + rea)
-    cantidad = Number (prompt("ingrese la cantidad a comprar"))
+
+    cantidad = Number (prompt("Ingrese la cantidad a comprar"))
     validarOperacion(plata,cantidad,rea)
 }
 
 function euros(plata) {
+
     alert("valor del euro en pesos es " + eur)
-    cantidad = Number (prompt("ingrese la cantidad a comprar"))
+
+    cantidad = Number (prompt("Ingrese la cantidad a comprar"))
     validarOperacion(plata,cantidad,eur)
 }
 
 function dolares(plata) {
+
     alert("valor del dolar en pesos es " + usd)
-    cantidad = Number (prompt("ingrese la cantidad a comprar"))
+
+    cantidad = Number (prompt("Ingrese la cantidad a comprar"))
     validarOperacion(plata,cantidad,usd)
     
 }
 
 function seleccionarTipoMoneda(apellido) {
 
-    plata = Number(prompt("ingrese su saldo"))
+    plata = Number(prompt("Ingrese su saldo"))
 
     console.log("1: dolares")
     console.log("2: euros")
     console.log("3: reales")
     console.log("4: salir")
 
-    let opcion = prompt("ingresar opcion")
+    let opcion = prompt("Ingresar opcion: 1:Dolares , 2:Euros , 3:Reales, 4:Salir")
     while (opcion != 4) {
 
         switch (opcion) {
             case "1":
-                return dolares(plata)
+                dolares(plata)
+
+                opcion = prompt("Ingresar opcion")
                 
-
-
                 break;
-
-                
 
             case "2":
-                return euros(plata)
+                 euros(plata)
 
-o
+                 opcion = prompt("Ingresar opcion")
 
                 break;
+
             case "3":
-                return reales(plata)
+                reales(plata)
 
-
+                opcion = prompt("Ingresar opcion")
 
                 break;
+
             case "4":
                 salir()
 
                 break;
 
             default:
-                console.log("operacion invalida")
+                console.log("Operacion invalida")
 
         }
-        opcion = prompt("ingresar opcion")
+       
 
     }
 }
 
 function ingreseContraseña(dni) {
     if(dni){
-        let contraseña = prompt("ingresar contraseña")
+        let contraseña = prompt("Ingresar contraseña")
         seleccionarTipoMoneda(contraseña)
     }
-    
 }
-
-
 
 function ingreseDni() {
 
-        let dni = prompt("ingresar dni")
+        let dni = prompt("Ingresar DNI")
         ingreseContraseña(dni)
-
-    
+ 
 }
-
-
-
-
 
 ingreseDni()
