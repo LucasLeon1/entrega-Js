@@ -7,7 +7,6 @@ function validarOperacion( moneda, plata) {
 
     cantidad = Number (prompt("Ingrese la cantidad a comprar de " + moneda.nombre + " : "))
     
-
     if (moneda.precio*cantidad<= plata) {
 
         plata -= cantidad * moneda.precio
@@ -17,7 +16,6 @@ function validarOperacion( moneda, plata) {
         alert("Fondos insuficientes")
     }
 }
-
 
 
 function Continuar(){
@@ -31,7 +29,6 @@ while(opcion != 2) {
     else {alert("opcion invalida")
 
     opcion = prompt("Ingresar opcion: 1: Continuar , 2: Salir")
-
     }   
 }
 salir()
@@ -57,9 +54,7 @@ console.log(reales.nombre)
 let listaMonedas = [dolares, euros, reales]
 
 
-
 function seleccionarTipoMoneda(){
-
 
     let seleccion = false
     while(seleccion != true){
@@ -74,45 +69,32 @@ function seleccionarTipoMoneda(){
                 validarOperacion(listaMonedas[i],plata)
                 Continuar()
                 return listaMonedas[i]
-            }
-
-           
+            }    
     }
     console.log("Seleccione un Personaje Valido")
     }
-
-
 }
 
 
-/*
+/* 
+CODIGO COMENTADO DE LO QUE HE CAMBIADO Y AHORRADO LINEAS DE CODIGO
 function reales(plata) {
-
     alert("valor del real en pesos es " + rea)
-
     cantidad = Number (prompt("Ingrese la cantidad a comprar:"))
     validarOperacion(plata,cantidad,rea)
 }
-
 function euros(plata) {
-
     alert("valor del euro en pesos es " + eur)
-
     cantidad = Number (prompt("Ingrese la cantidad a comprar:"))
     validarOperacion(plata,cantidad,eur)
 }
-
 function dolares(plata) {
-
     alert("valor del dolar en pesos es " + usd)
-
     cantidad = Number (prompt("Ingrese la cantidad a comprar:"))
     validarOperacion(plata,cantidad,usd)
-
+}
 function seleccionarTipoMoneda() {
-
     plata = Number(prompt("Ingrese su saldo a utilizar"))
-
     console.log("1: dolares")
     console.log("2: euros")
     console.log("3: reales")
@@ -124,44 +106,31 @@ function seleccionarTipoMoneda() {
         switch (opcion) {
             case "1":
                 dolares(plata)
-
                 opcion = prompt("Ingresar opcion: 1:Dolares , 2:Euros , 3:Reales, 4:Salir")
-
                 break;
-
             case "2":
                 euros(plata)
-
                 opcion = prompt("Ingresar opcion: 1:Dolares , 2:Euros , 3:Reales, 4:Salir")
-
                 break;
-
             case "3":
                 reales(plata)
-
                 opcion = prompt("Ingresar opcion: 1:Dolares , 2:Euros , 3:Reales, 4:Salir")
-
                 break;
-
             case "4":
                 salir()
-
                 break;
-
             default:
                 console.log("Operacion invalida")
         }
     }
 }
 */
-
 function validarClave(clave) {
     if (clave === "1111") {
         plata = Number(prompt("Ingrese su saldo a utilizar"))
         seleccionarTipoMoneda()
     } else {
         alert("Clave incorrecta")
-
     }
 }
 
@@ -187,10 +156,8 @@ function ingreseDni(inicio) {
 }
 
 function Inicio() {
-
     let inicio = confirm("Ustedes esta ingresando a Compra de divisas")
     ingreseDni(inicio)
-
 }
 
 Inicio()
